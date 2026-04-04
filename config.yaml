@@ -1,0 +1,11 @@
+display:
+  status: true
+  headers: false
+  body_threshold: 1024
+  check_text_type: true
+  show_size: true
+
+file:
+  save_body_only: true
+  dir: "./output"
+  prefix: "response_"
