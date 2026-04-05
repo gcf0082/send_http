@@ -5,7 +5,7 @@ description: |
   特别是需要快速测试 API、发送请求而不想使用复杂的 curl 命令时。
   适用于：发送 HTTP 请求、测试 REST API、快速调试端点、替代 curl 的简单工具。
   用户只需要提供 URL 即可发送请求，支持自定义 header、body 文件、HTTP 方法。
-  配置文件控制终端显示内容（status/headers/body/size），响应 body 保存到文件。
+  响应 body 保存到文件。
 ---
 
 # send-http - 简单 HTTP 请求工具
@@ -35,13 +35,6 @@ send_http.py <url> [-b <body_file>] [-H <header>] [-m <method>]
 - `-b/--body`: 可选，body 文件路径
 - `-H/--header`: 可选，自定义 header（可多次使用），格式：`key=value`
 - `-m/--method`: 可选，HTTP 方法（默认 GET）
-
-### 内部默认配置
-
-- **默认 Header**: `Content-Type: application/json`
-- **默认 Proxy**: 无（禁用）
-- **证书验证**: 忽略（verify=False）
-- **协议支持**: HTTP 和 HTTPS
 
 
 ### 输出逻辑
@@ -107,19 +100,3 @@ Response size: 27869 bytes
 Complete response saved to: ./output/response_1234567890.txt
 ```
 
-## 依赖
-
-- Python 3
-- requests
-- pyyaml
-
-安装依赖：
-```bash
-pip install -r requirements.txt
-```
-
-## 工具文件
-
-- `send_http.py`: 主程序
-- `config.yaml`: 配置文件
-- `requirements.txt`: Python 依赖
